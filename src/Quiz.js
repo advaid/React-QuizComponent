@@ -9,11 +9,11 @@ class Quiz extends Component {
     this.state = { quiz_position: 1 };
   }
 
-  showNextQuestion() {
+  showNextQuestion = () => {
     this.setState(state => {
       return { quiz_position: state.quiz_position + 1 };
     });
-  }
+  };
 
   render() {
     const isQuizEnd =
@@ -27,7 +27,7 @@ class Quiz extends Component {
             quiz_question={
               quizData.quiz_questions[this.state.quiz_position - 1]
             }
-            showNextQuestionHandler={this.showNextQuestion.bind(this)}
+            showNextQuestionHandler={this.showNextQuestion}
           />
         )}
       </div>
